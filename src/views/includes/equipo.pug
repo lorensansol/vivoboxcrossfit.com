@@ -1,0 +1,19 @@
+section.py-5.bg-light#equipo
+  .container
+    .row
+      .col-md-12
+        h2.h1.text-secondary Equipo
+    if equipoItems
+      each equipoItem, id in equipoItems
+        .row.my-4(class=id==0 ? 'mt-4' : 'mt-5')
+          .col-sm-4.col-md-6.mb-3(class=(id%2 != 0 && 'order-sm-1') data-showup)
+            img.center-block.img-fluid.img-thumbnail.mb-3(data-src=equipoItem.img width='300' alt=equipoItem.name)
+            h3.mb-0.text-primary= equipoItem.name
+            p.h4.text-secondary.mb-1= equipoItem.profesion
+            p.h5.text-muted!= equipoItem.profesionalNumber
+          .text-muted.text-left.col-sm-8.col-md-6.mb-3(data-showup)
+            ul.list-group
+              each skill in equipoItem.skills
+                li.list-group-item
+                  i.fa.fa-check.text-primary.mr-2
+                  |  #{skill}

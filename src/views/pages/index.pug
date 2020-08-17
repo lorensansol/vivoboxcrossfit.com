@@ -1,0 +1,40 @@
+extends ../template/layout.pug
+
+block var
+  -
+    const
+    title = '🥇 Clínica Martínez Marcos 【 Murcia 】',
+    metaDescription = 'llll➤ Clínica de Psicología, Logopedia, Psiquiatría, Fisioterapia y Osteopatía en Murcia ✅ Tu salud en las mejores manos.',
+    index = true
+
+block menu
+
+block servicios
+  section.py-5.bg-light#servicios
+    .container
+      .row
+        .text-center.mx-auto.col-md-12
+          h2.h1.text-secondary Servicios
+      .row
+        -
+          const serviciosItems = [
+            { name: 'Piscología', link: 'psicologos-murcia', icon: 'brain' },
+            { name: 'Logopedia', link: 'logopedas-murcia', icon: 'comment-medical' },
+            { name: 'Psiquiatría', link: 'psiquiatras-murcia', icon: 'capsules' },
+            { name: 'Fisioterapia', link: 'fisioterapeuta-murcia', icon: 'praying-hands' },
+          ]
+        each serviciosItem in serviciosItems
+          .p-2.col-6.col-lg-3(data-showup)
+            .card.text-center.text-dark
+              a.card-body.p-2.p-sm-3.p-md-4.bg-white.rounded.btn.btn-light(href=serviciosItem.link)
+                i.d-block.fa.fa-5x.mb-3.text-primary(class=`fa-${serviciosItem.icon}`)
+                p.text-secondary.h4.m-0= serviciosItem.name
+
+block nosotros
+block equipo
+block caracteristicas
+block precios
+block ofertas
+block aseguradoras
+block resenas
+block contacto

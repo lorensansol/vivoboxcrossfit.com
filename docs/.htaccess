@@ -1,0 +1,32 @@
+# Activar redirecciones
+RewriteEngine On
+
+# Redireccionar de http a https
+RewriteCond %{ENV:HTTPS} !on [NC]
+RewriteCond %{HTTP_HOST} ^clinicamartinezmarcos\.com$
+RewriteRule ^(.*)$ https://clinicamartinezmarcos.com/$1 [R=301,L,NE]
+
+# Redireccionar de www a sin
+RewriteCond %{HTTP_HOST} ^www.clinicamartinezmarcos.com [NC]
+RewriteRule ^(.*)$ https://clinicamartinezmarcos.com/$1 [L,R=301]
+
+# Quitar extensión .html en las URLs
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html
+
+# Página de Error 404
+ErrorDocument 404 /404
+
+# Especificar caché de navegador en servidor
+<IfModule mod_expires.c>
+<filesmatch "\.(ico|pdf|flv|svg|jpg|jpeg|png|gif|mp4|JPG|JPEG|PNG|GIF|MP4|js|css|xml|txt|woff2|woff|ttf|eot)$">
+ExpiresActive on
+ExpiresDefault "access plus 30 day"
+</filesmatch>
+</IfModule>
+
+# Redirecciones 301
+Redirect 301 /index /
+Redirect 301 /m/ /
+Redirect 301 /mobile/ /

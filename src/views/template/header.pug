@@ -1,0 +1,13 @@
+header.d-flex.align-items-center.py-5.cover.section-parallax.section-light(style=`background-image: url('${headerBackground || 'img/fondo.jpg'}'); background-size: cover;`)
+  .container(data-showup)
+    .row
+      .col-lg-12.mt-5
+        block headerContent
+          h1.mb-3.d-table.m-auto.text-left
+            img.align-baseline.mr-1(src='img/icono.png' alt='icono clínica martínez marcos' width='50' height='50')
+            span.text-secondary Clínica
+            span.text-primary.d-block.h2 Martínez Marcos
+          p.lead Tu salud en las mejores manos
+        a.btn.btn-lg.mt-4.btn-secondary(href='#main') Más Información
+        a.text-dark.text-decoration-none(href='#main')
+          i.d-block.fa.fa-angle-down.pt-5.fa-3x

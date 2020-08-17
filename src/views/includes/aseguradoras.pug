@@ -1,0 +1,37 @@
+-
+  const
+  aseguradoras = [
+    { name: 'asisa', ext: 'svg' },
+    { name: 'adelas', ext: 'svg' },
+    { name: 'caser-seguros', ext: 'svg' },
+    { name: 'dkv', ext: 'svg' },
+    { name: 'tavad', ext: 'svg' },
+    { name: 'canal-salud-24', ext: 'png' },
+    { name: 'azkaran', ext: 'png' },
+    { name: 'd-salus', ext: 'png' },
+  ],
+  convenios = [
+    { name: 'umu', ext: 'svg', nameLarge: 'universidad de murcia umu' },
+    { name: 'viu', ext: 'svg', nameLarge: 'universidad internacional de valencia viu' },
+  ]
+
+mixin aseguradora(name, ext, convenio)
+  .col-6.d-flex.align-items-center(class=convenio ? 'col-md-6' : 'col-md-3')
+    img.center-block.img-fluid.d-block(data-src=`img/aseguradoras/${name}.${ext}` alt=convenio || `aseguradora ${name}`)
+
+section.py-5.section.bg-faded.bg-light#aseguradoras
+  .container
+    .row
+      .col-md-12
+        h2.h1.text-secondary Aseguradoras
+        p.mb-4 Compañías aseguradoras con las que trabajamos
+    .row(data-showup)
+      each aseguradora in aseguradoras
+        +aseguradora(aseguradora.name, aseguradora.ext)
+    .row.mt-4
+      .col-md-12
+        h2.h1.text-secondary Convenios
+        p.mb-4 Con las universidades y alumnos en practicas
+    .row
+      each convenio in convenios
+        +aseguradora(convenio.name, convenio.ext, convenio.nameLarge)

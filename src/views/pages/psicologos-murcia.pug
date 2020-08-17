@@ -1,0 +1,89 @@
+extends ../template/layout.pug
+
+block var
+  -
+    const
+    title = '🥇 Clínica de Psicología 【 Psicólogos en Murcia 】',
+    metaDescription = 'llll➤ Evaluación, diagnóstico intervención y tratamiento de distintos trastornos psicológicos ✅ a lo largo del ciclo vital.',
+    url = 'psicologos-murcia',
+    img = 'img/equipo-clinica-martinez-marcos.jpg',
+    menuItems = [
+      { name: 'Servicios', link: 'servicios' },
+      { name: 'Nosotros', link: 'nosotros' },
+      { name: 'Equipo', link: 'equipo' },
+      { name: 'Características', link: 'caracteristicas' },
+      { name: 'Precios', link: 'precios' },
+      { name: 'Aseguradoras', link: 'aseguradoras' },
+      { name: 'Reseñas', link: 'resenas' },
+    ],
+    serviciosItems = [
+      { header: 'Estimulación Cognitiva', body: '<p>Conjunto de métodos y estrategias que se dirigen a mantener o mejorar el funcionamiento <strong>cognitivo</strong> mediante ejercicios de memoria, percepción, atención, lenguaje, funciones ejecutivas (solución de problemas, planificación, control… etc.).</p>' },
+      { header: 'Psicología Infanto-Juvenil', body: '<p>En los últimos años, ha aumentado de forma importante el número de niños y adolescentes que sufren problemas psicológicos. Las tasas de prevalencia actuales señalan que entre el 17 y el 20% de los niños y adolescentes españoles padecen trastornos psicológicos. Intervenimos en problemas que pueden afectar al desarrollo social, emocional y cognitivo, así como a la relación que se establece entre el niño y sus padres, repercutiendo en el funcionamiento social, familiar y académico del niño o del adolescente.</p>' },
+      { header: 'Psicoterapia', body: '<p>La psicoterapia es un tratamiento de colaboración basado en el diálogo, proporciona un ambiente de apoyo que le permite hablar abiertamente con alguien objetivo, neutral e imparcial. Usted y el psicólogo trabajarán juntos para identificar y cambiar los patrones de pensamiento y comportamiento que le impiden sentirse bien.</p>' },
+      { header: 'Orientación Escolar', body: '<p>Proceso por el que se ayuda a los niños y adolescentes a lograr la comprensión y dirección de sí mismos, necesarias para conseguir una adaptación máxima a la escuela, el hogar y la comunidad.</p>' },
+      { header: 'Tratamientos Cognitivos-Conductuales', body: '<p>Disciplina científica que consiste en enseñar una serie de técnicas y estrategias para que la persona afronte su problema emocional y lo maneje hasta eliminarlo. El psicólogo es un entrenador y la terapia es un proceso de entrenamiento o reaprendizaje donde se elimina el resultado de malas experiencias.</p><blockquote>“Nuestros problemas emocionales son fruto del aprendizaje”</blockquote><p><strong>Centro de Terapia de Conducta.</strong></p>' },
+      { header: 'de las Adicciones', body: '<p>Colaboramos con el Centro de Tratamientos Avanzados de la Adicción TAVAD, donde después de someterse al proceso de desintoxicación, los pacientes acuden a consulta para hacer un seguimiento y prevención de recaída.</p><blockquote>“El <a href="http://www.tavad.com/tratamiento-adicciones/" target="_blank">tratamiento de las adicciones</a>, especialmente al alcohol, heroina, cocaina y benzodiacepinas es nuestro principal objetivo. En muchas ocasiones, existe comorbilidad, lo que significa que cuando el paciente sufre una dependencia a una droga, la familia y el paciente padecen también otros trastornos como ansiedad o depresión. No es posible el éxito del tratamiento de la dependencia a una sustancia adictiva a menos que se traten también estos trastornos. Por esta razón, contamos con especialistas en distintas áreas dentro de nuestra red de atención. Así mismo, Tavad puede realizar el seguimiento ambulatorio a sus pacientes que han realizado la fase hospitalaria, en muchas ciudades de España como por ejemplo Madrid, Barcelona, Valencia, Sevilla, Murcia, Logroño, Salamanca, Castellón, entre otras” - <cite>TAVAD</cite></blockquote>' },
+      { header: 'de Pareja', body: '<p>La terapia de pareja y/o matrimonial está dirigida a solucionar los conflictos, superar las crisis, resolver los problemas de comunicación entre ambas partes y reforzar los aspectos positivos de la relación:</p><ul class="text-left"><li>Problemas de comunicación</li><li>Celos o desconfianza</li><li>Problemas de convivencia</li><li>Dependencia emocional</li><li>Dificultad para mantener la pareja</li><li>Infidelidad</li><li>Miedo al compromiso</li><li>Ruptura sentimental, separación o divorcio</li></ul>' },
+    ],
+    equipoItems = [
+      {
+        img: 'img/juan-jose-martinez-marcos.jpg',
+        name: 'Juan José Martínez Marcos',
+        profesion: 'Psicólogo Especialista',
+        profesionalNumber: 'Nº Colegiado Psicología: MU-907<br>Nº Colegiado Logopedia: LR-034',
+        skills: [
+          'Licenciado en Psicología por la Universidad de Murcia.',
+          'Psicólogo Clínico y de Salud.',
+          'Especialista en Psicoterapia por la EFPA (European Federation of Physchologist\'s Associations).',
+          'Habilitado logopeda por el colegio profesional de Logopedas de La Rioja.',
+          'Especialista en psicología de las adicciones.',
+          'Profesor asociado de prácticas de la Universidad de Murcia (UMU). Psicología y Logopedia.',
+          'Profesor asociado de prácticas por la Universidad Internacional de Valencia (VIU). Máster en Psicología Sanitaria y Máster de Logopedia.',
+        ]
+      },
+      {
+        img: 'img/leticia-martinez-pino.jpg',
+        name: 'Leticia Martínez Pino',
+        profesion: 'Psicólogo Especialista',
+        profesionalNumber: 'Nº Colegiado Psicólogía: MU03521',
+        skills: [
+          'Graduada en psicología por la universidad de Murcia.',
+          'Máster en Psicología General Sanitaria por la Universidad Internacional de Valencia.',
+          'Especialista en drogodependencias en Tratamientos Avanzados de la Adicción (TAVAD).',
+          'Especialista infanto juvenil por la universidad de Nebrija.',
+          'Amplia formación en trastornos de ansiedad y depresión.',
+        ]
+      },
+    ],
+    preciosItems = [
+      { header: 'Adultos', minuts: '50', price: '40-50€', icon: 'male', class: 'col-md-4 col-sm-6' },
+      { header: 'Niños', minuts: '50', price: '40€', icon: 'child', class: 'col-md-4 col-sm-6' },
+      { header: 'Parejas', minuts: '50', price: '60€', icon: 'restroom', class: 'col-md-4' },
+    ],
+    ofertasItems = [
+      { header: 'Desempleado / Estudiante', price: '35€', icon: 'graduation-cap', class: 'col-md-4 ', headerClass: 'h6' },
+      { header: 'Bono 4 Sesiones / Mes', price: '120€', icon: 'calendar-check', class: 'col-md-4 col-sm-6', headerClass: 'h6' },
+      { header: 'Tratamiento 4 Meses', price: '480€', icon: 'calendar-plus', class: 'col-md-4 col-sm-6', headerClass: 'h6' },
+    ],
+    resenasLinkGoogle = 'http://bit.ly/2P7FjSb',
+    resenasLinkFacebook = 'https://www.facebook.com/pg/ClinicaMartinezMarcos1/reviews/',
+    horarioDias = 'Lunes - Viernes',
+    horarioHoras = '16:30 - 21:00',
+    tlfLlamar = '968 11 13 64',
+    tlfWhatsApp = '968 11 13 64',
+    email = 'clinicamartinezmarcos@gmail.com'
+
+block headerContent
+  h1
+    span.text-secondary Clínica de Psicología
+    br
+    span.text-primary Psicólogos en Murcia
+  p.lead Tu salud en las mejores manos
+
+block resenasContent
+  .col-12.col-md-6
+    +resena('Jose Maria López Marcos', '¡Excelentes en el trato, y profesionales de una calidad humana inigualable!')
+    +resena('Maria Jose de Andres Lucas', 'En mi vida he empezado ya varias terapias sin demasiado éxito y adherencia. Sin embargo, con Leticia ha sido todo diferente; hemos establecido una relación terapéutica fructífera en un ambiente de plena confianza y sólo puedo decir que estoy muy satisfecha con mi experiencia en esta clínica :)')
+  .col-12.col-md-6
+    +resena('Isabel Carmona', 'Un sueño hecho realidad. En ella hay grandes profesionales y eso hoy en día no es muy fácil de encontrar. ¡Enhorabuena!')
+    +resena('Encarna López', 'Buen trato. Excelente formación y profesionalidad. Alternativas a la hora de abordar los problemas. Especialista en psicoterapia. Terapia de aceptación y compromiso.')

@@ -1,0 +1,14 @@
+section.py-5.bg-secondary.section-aquamarine#ofertas
+  .container
+    .row
+      .text-center.mx-auto.col-md-12
+        h2.h1 Ofertas
+    .row
+      each ofertasItem in ofertasItems
+        .p-3(class=ofertasItem.class data-showup)
+          .card.text-center.text-dark
+            .card-body.p-4.bg-white.rounded
+              i.d-block.fa.fa-5x.text-secondary.mb-3(class=`fa-${ofertasItem.icon}`)
+              h3.text-primary(class=ofertasItem.headerClass)= ofertasItem.header
+              h4.h2.text-secondary= ofertasItem.price
+              a.btn.btn-primary.mt-3(href='#contacto') Contactar

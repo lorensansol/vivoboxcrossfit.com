@@ -1,0 +1,120 @@
+extends ../template/layout.pug
+
+block var
+  -
+    const
+    title = '🥇 Mios: Clínica de Fisioterapia y Osteopatía 【 Murcia 】',
+    metaDescription = 'llll➤ Nuestro servicio de Rehabilitación y Fisioterapia ✅ ofrece la recuperación de dolencias mediante el uso de técnicas de Fisioterapia innovadoras.',
+    url = 'fisioterapia-murcia',
+    img = 'img/mios-rehab/equipo-mios-rehab.jpg',
+    headerBackground = 'img/mios-rehab/local-mios-rehab-2.jpg',
+    menuItems = [
+      { name: 'Servicios', link: 'servicios' },
+      { name: 'Nosotros', link: 'nosotros' },
+      { name: 'Equipo', link: 'equipo' },
+      { name: 'Características', link: 'caracteristicas' },
+      { name: 'Precios', link: 'precios' },
+      { name: 'Reseñas', link: 'resenas' },
+    ],
+    serviciosItems = [
+      { header: '1º ENTREVISTA', body: '<p>Durante nuestra entrevista recogemos los datos necesarios para saber cuál es el problema que nos atañe, realizamos las pruebas de evaluación necesarias, tanto manuales como de movimiento y obtenemos un resultado sobre el que trabajar para que consigas tus objetivos, tanto de dolor como respecto al movimiento. Una buena entrevista ya es el inicio de un buen tratamiento.</p>' },
+      { header: '2º PLANIFICACIÓN DEL TRATAMIENTO', body: '<p>Una vez obtenidos los datos y una buena valoración, consensuamos con el paciente el tratamiento posible y los recursos de los que disponemos para tratar su problema, intentando usar siempre los últimos avances en investigación. Así pues intentamos educar a nuestros pacientes siempre para que comprendan tanto el problema como la solución.</p><p>Siempre intentamos buscar que el paciente con síntomas salga de nuestra Session con mejorías clínicas respecto al inicio de la misma.</p><p>Recordamos que no solemos usar el modelo obsoleto de fisioterapia de "corriente-calor-masaje for everybody".</p>' },
+      { header: '3º SEGUIMIENTO POSTERIOR', body: '<p>Nos gusta saber cómo están nuestros pacientes, ya que el tratamiento siempre continúa una vez fuera de la consulta. Por ello realizamos un seguimiento vía móvil/Red social para asegurarnos que el problema se resuelve satisfactoriamente y de forma definitiva (no cronificamos los problemas, buscamos soluciones al mismo); en caso de no resolverlo por una vía, buscaremos siempre una alternativa, derivando a otros profesionales en los casos que sean necesarios.</p>' },
+    ],
+    nosotrosBackground = 'img/mios-rehab/equipo-mios-rehab.jpg',
+    instagramLink = 'https://www.instagram.com/mios.rehab/',
+    facebookLink = 'https://www.facebook.com/mios.rehab',
+    equipoItems = [
+      {
+        img: 'img/mios-rehab/jose-a-lozano.jpg',
+        name: 'Jose Antonio Lozano Meca',
+        profesion: 'Fisioterapeuta',
+        profesionalNumber: 'Nº Colegiado I.C.O.F.R.M.: 2285',
+        skills: [
+          'Fisioterapeuta por la Universidad de Murcia.',
+          'Experto en Fisioterapia Deportiva.',
+          'Osteópata.',
+          'Premio Extraordinario Universitario.',
+          'Especialista en Tendones y Ejercicio Correctivo.',
+          'Experto Certificado en Gimnasia Abdominal Hipopresiva.',
+          'Terapeuta Craneosacral.',
+          'Especialista en Inducción Miofascial.',
+        ]
+      },
+      {
+        img: 'img/mios-rehab/miguel-garcia-albadalejo-miki.jpg',
+        name: 'Miguel García Albaladejo',
+        profesion: 'Fisioterapeuta',
+        profesionalNumber: 'Nº Colegiado I.C.O.F.R.M.: 2595',
+        skills: [
+          'Fisioterapeuta por la Universidad de Murcia.',
+          'Experto en Fisioterapia Deportiva.',
+          'Especialista en Terapia Fascial.',
+          'Experto en el Abordaje Activo de Lesiones Musculoesqueléticas.',
+          'Fisioterapeuta UCAM – POZO F.S.F.',
+        ]
+      },
+    ],
+    preciosBackground = 'img/mios-rehab/local-mios-rehab.jpg',
+    preciosItems = [
+      { header: 'Fisioterapia', minuts: '50-60', price: '25€', icon: 'praying-hands', class: 'col-sm-6' },
+      { header: 'Osteopatía', minuts: '50-60', price: '35€', icon: 'hand-holding-heart', class: 'col-sm-6' },
+    ],
+    ofertasItems = [
+      { header: 'Estudiantes', price: '15%', icon: 'graduation-cap', class: 'col-md-4 ', headerClass: 'h5' },
+      { header: '3 Sesiones', price: '70€', icon: 'calendar-check', class: 'col-md-4 col-sm-6', headerClass: 'h5' },
+      { header: '5 Sesiones', price: '100€', icon: 'calendar-plus', class: 'col-md-4 col-sm-6', headerClass: 'h5' },
+    ],
+    resenasLinkGoogle = 'http://bit.ly/33QRWqs',
+    // resenasLinkFacebook = 'https://www.facebook.com/pg/ClinicaMartinezMarcos1/reviews/',
+    horarioDias = 'Lunes - Viernes',
+    horarioHoras = '9:00 - 13:00 + 16:30 - 21:30',
+    tlfLlamar = '643 21 01 75',
+    tlfWhatsApp = '643 21 01 75'
+
+block headerContent
+  h1
+    span.text-secondary Clínica de Fisioterapia
+    br
+    span.text-primary y Osteopatía en Murcia
+  p.lead
+    | Cuida tu Cuerpo
+    br
+    | Cuida tu Futuro
+
+block nosotrosContent
+  p Queremos ofreceros lo mejor de nuestra profesión, de nuestras manos, de nuestras ganas y de nuestro conocimiento.
+  p Queremos aportar valor a la fisioterapia, crecer como profesionales y cuidaros lo mejor posible para que podáis tener la mejor calidad de vida que se puede conseguir cuando tienes un fisioterapeuta de confianza a tu lado.
+  p Os atenderemos siempre con la mejor sonrisa, el mejor trato y el mejor tratamiento que podamos ofrecer, siempre con la humildad como bandera.
+
+block caracteristicas
+  section.pt-5.bg-secondary.section-aquamarine#caracteristicas
+    .container
+      .row
+        .col-md-12.text-center
+          h2.h1 Características
+          p.mb-4 Lo que nos Diferencia
+      .row
+        .col-lg-6(data-showup)
+          img.center-block.img-fluid.mb-3.img-thumbnail(data-src='img/mios-rehab/equipo-mios-rehab.jpg' alt='equipo mios rehab')
+        .col-lg-6.text-justify(data-showup)
+          p Nuestro servicio de Rehabilitación y Fisioterapia ofrece la recuperación de dolencias mediante el uso de técnicas de Fisioterapia innovadoras.
+          p Nuestra forma de trabajo está fundamentalmente basada en la Terapia Manual y Osteopatía, dejando en un segundo plano técnicas basadas en electroterapia, así como la Termoterapia y demás metodologías utilizadas en fisioterapia Low Cost, nos gusta trabajar bien, nos gusta mejorar a los pacientes.
+          p Además utilizamos el Movimiento y Ejercicio como forma de recuperación, basándonos en las últimas investigaciones y la última ciencia demostrada. La Fisioterapia avanza en nuestra sociedad y nosotros con ella.
+          .collapse#descubre
+            p Nuestra sesión de Fisioterapia suele tener una duración aproximada de entre 50 y 60 minutos según la necesidad y la patología del paciente. Las técnicas utilizadas son principalmente la Terapia Manual y el Movimiento.
+            p
+              | Realizamos una evaluación y entrevista personal para la mejor comprensión del problema y la elección del tratamiento adecuado para cada paciente, ya que no todos los pacientes son iguales; 
+              strong adaptamos el tratamiento al paciente, no el paciente al tratamiento
+              | .
+            p La sesión de Osteopatía exclusiva tiene una duración de entre 50 a 60 minutos. Incluyendo la recopilación de datos, entrevista y tratamiento según una hipótesis osteopática.
+            p Dentro de nuestra sesión de Osteopatía desarrollamos tratamientos tanto estructurales (manipulativos), como fasciales, craneales o viscerales (estómago, hígado, intestinos, etc…).
+          p.text-center
+            button.btn.btn-light.btn-md.m-2(type='button' data-toggle='collapse' data-target='#descubre' aria-expanded='false' aria-controls='descubre')
+              | Más Información 
+              i.fa.fa-chevron-right.fa-fw
+
+block resenasContent
+  .col-12.col-md-3
+  .col-12.col-md-6
+    +resena('Esmeralda Rodriguez Hernandez', 'Muy buenos profesionales, implicados desde el primer momento. Trato cercano. 100% recomendable.')
