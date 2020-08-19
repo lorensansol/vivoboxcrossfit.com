@@ -15,6 +15,7 @@ import comments from 'postcss-discard-comments'
 import cssnano from 'cssnano'
 import autoprefixer from 'autoprefixer'
 import purgecss from 'gulp-purgecss'
+const critical = require('critical').stream
 
 // JavaScript
 import babel from 'gulp-babel'
@@ -129,4 +130,18 @@ gulp.task('default', () => {
   gulp.watch('src/views/**/*.pug', gulp.series('html', reload))
   gulp.watch('src/js/**/*.js', gulp.series('js', reload))
   gulp.watch('src/scss/**/*.scss', gulp.series('css'))
+})
+
+gulp.task('critical', () => {
+  return gulp
+    .src('docs/*.html')
+    .pipe(
+      critical({
+        base: 'docs/',
+        inline: true,
+        css: ['docs/css/styles.css'],
+        ignore: ['font-face'],
+      })
+    )
+    .pipe(gulp.dest('docs'))
 })
