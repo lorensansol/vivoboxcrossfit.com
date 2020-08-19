@@ -38,5 +38,10 @@ html(lang="es")
         a.text-primary(onclick="window.open('cookies','_blank')") Leer más
         |  
         button.btn.btn-secondary.btn-sm(onclick='controlcookies()') OK
+    if devMode
+      link(rel='stylesheet' href='gfonts/fonts.css')
+    else
+      link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto+Slab:700|Roboto:300,400&display=swap')
+    link(rel='stylesheet' href='css/styles.css' type='text/css')
     block scripts
-      script(src="/js/scripts.js")
+      script(src="/js/scripts.js" defer)
