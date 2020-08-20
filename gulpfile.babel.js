@@ -37,29 +37,6 @@ gulp.task('html', () => {
     .pipe(gulp.dest('docs'))
 })
 
-gulp.task('css', () => {
-  if (devMode) {
-    return gulp
-      .src('src/scss/styles.scss')
-      .pipe(sass())
-      .pipe(gulp.dest('docs/css'))
-      .pipe(stream())
-  } else {
-    return gulp
-      .src('src/scss/styles.scss')
-      .pipe(sass())
-      .pipe(
-        purgecss({
-          content: ['docs/**/*.html', 'docs/js/*.js'],
-          variables: true,
-        })
-      )
-      .pipe(postcss([comments({ removeAll: true }), cssnano(), autoprefixer()]))
-      .pipe(gulp.dest('docs/css'))
-      .pipe(stream())
-  }
-})
-
 const filesJs = [
   'src/js/lib/jquery-3.3.1.slim.min.js',
   'node_modules/bootstrap/dist/js/bootstrap.min.js',
@@ -89,6 +66,43 @@ gulp.task('js', () => {
   }
 })
 
+gulp.task('css', () => {
+  if (devMode) {
+    return gulp
+      .src('src/scss/styles.scss')
+      .pipe(sass())
+      .pipe(gulp.dest('docs/css'))
+      .pipe(stream())
+  } else {
+    return gulp
+      .src('src/scss/styles.scss')
+      .pipe(sass())
+      .pipe(
+        purgecss({
+          content: ['docs/**/*.html', 'docs/js/*.js'],
+          variables: true,
+        })
+      )
+      .pipe(postcss([comments({ removeAll: true }), cssnano(), autoprefixer()]))
+      .pipe(gulp.dest('docs/css'))
+      .pipe(stream())
+  }
+})
+
+gulp.task('critical', () => {
+  return gulp
+    .src('docs/*.html')
+    .pipe(
+      critical({
+        base: 'docs/',
+        inline: true,
+        css: ['docs/css/styles.css'],
+        ignore: ['font-face'],
+      })
+    )
+    .pipe(gulp.dest('docs'))
+})
+
 gulp.task('img', () => {
   return gulp
     .src('src/img/**/*')
@@ -105,13 +119,6 @@ gulp.task('img', () => {
     .pipe(gulp.dest('docs/img'))
 })
 
-gulp.task('gfonts', () => {
-  return gulp
-    .src('fonts.list')
-    .pipe(googleWebFonts({ fontDisplayType: 'swap' }))
-    .pipe(gulp.dest('docs/gfonts'))
-})
-
 gulp.task('rest', () => {
   return (
     gulp
@@ -121,7 +128,16 @@ gulp.task('rest', () => {
   )
 })
 
-gulp.task('all', gulp.series('html', 'css', 'js', 'img', 'rest'))
+gulp.task('gfonts', () => {
+  return gulp
+    .src('fonts.list')
+    .pipe(googleWebFonts({ fontDisplayType: 'swap' }))
+    .pipe(gulp.dest('docs/gfonts'))
+})
+
+gulp.task('all', gulp.series('html', 'js', 'css', 'critical', 'img', 'rest'))
+
+gulp.task('html5', gulp.series('html', 'js', 'css', 'critical'))
 
 gulp.task('default', () => {
   server({
@@ -130,18 +146,4 @@ gulp.task('default', () => {
   gulp.watch('src/views/**/*.pug', gulp.series('html', reload))
   gulp.watch('src/js/**/*.js', gulp.series('js', reload))
   gulp.watch('src/scss/**/*.scss', gulp.series('css'))
-})
-
-gulp.task('critical', () => {
-  return gulp
-    .src('docs/*.html')
-    .pipe(
-      critical({
-        base: 'docs/',
-        inline: true,
-        css: ['docs/css/styles.css'],
-        ignore: ['font-face'],
-      })
-    )
-    .pipe(gulp.dest('docs'))
 })
