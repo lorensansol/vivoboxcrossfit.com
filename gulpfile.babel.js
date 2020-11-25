@@ -38,8 +38,7 @@ gulp.task('html', () => {
 })
 
 const filesJs = [
-  'src/js/lib/jquery-3.3.1.slim.min.js',
-  'node_modules/bootstrap/dist/js/bootstrap.min.js',
+  'node_modules/bootstrap.native/dist/bootstrap-native.esm.min.js',
   'src/js/cookies-control.js',
   'src/js/scroll-behavior-smooth.js',
   'src/js/scroll-shot.js',
@@ -141,7 +140,12 @@ gulp.task('html5', gulp.series('html', 'js', 'css', 'critical'))
 
 gulp.task('default', () => {
   server({
-    server: 'docs',
+    server: {
+        baseDir: "./docs",
+        serveStaticOptions: {
+            extensions: ['html']
+        }
+    }
   })
   gulp.watch('src/views/**/*.pug', gulp.series('html', reload))
   gulp.watch('src/js/**/*.js', gulp.series('js', reload))
