@@ -1,6 +1,3 @@
-// Modo Desarrollo
-const devMode = false
-
 // Common
 import gulp from 'gulp'
 import concat from 'gulp-concat'
@@ -15,7 +12,7 @@ import comments from 'postcss-discard-comments'
 import cssnano from 'cssnano'
 import autoprefixer from 'autoprefixer'
 import purgecss from 'gulp-purgecss'
-const critical = require('critical').stream
+import { stream as critical } from 'critical'
 
 // JavaScript
 import babel from 'gulp-babel'
@@ -30,6 +27,9 @@ import googleWebFonts from 'gulp-google-webfonts'
 // Browser Sync
 import { init as server, stream, reload } from 'browser-sync'
 
+// Modo Desarrollo
+const devMode = false
+
 gulp.task('html', () => {
   return gulp
     .src('src/views/pages/**/*.pug')
@@ -38,13 +38,13 @@ gulp.task('html', () => {
 })
 
 const filesJs = [
-  'node_modules/bootstrap.native/dist/bootstrap-native.esm.min.js',
+  'node_modules/bootstrap.native/dist/bootstrap-native.js',
   'src/js/cookies-control.js',
   'src/js/scroll-behavior-smooth.js',
   'src/js/scroll-shot.js',
   'src/js/scroll-show.js',
   'src/js/lazy-load.js',
-  'src/js/custom.js',
+  'src/js/custom.js'
 ]
 
 gulp.task('js', () => {
@@ -79,7 +79,7 @@ gulp.task('css', () => {
       .pipe(
         purgecss({
           content: ['docs/**/*.html', 'docs/js/*.js'],
-          variables: true,
+          variables: true
         })
       )
       .pipe(postcss([comments({ removeAll: true }), cssnano(), autoprefixer()]))
@@ -96,7 +96,7 @@ gulp.task('critical', () => {
         base: 'docs/',
         inline: true,
         css: ['docs/css/styles.css'],
-        ignore: ['font-face'],
+        ignore: ['font-face']
       })
     )
     .pipe(gulp.dest('docs'))
@@ -111,8 +111,8 @@ gulp.task('img', () => {
         imagemin.mozjpeg({ quality: 70, progressive: true }),
         imagemin.optipng({ optimizationLevel: 1 }),
         imagemin.svgo({
-          plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
-        }),
+          plugins: [{ removeViewBox: true }, { cleanupIDs: false }]
+        })
       ])
     )
     .pipe(gulp.dest('docs/img'))
@@ -141,10 +141,10 @@ gulp.task('html5', gulp.series('html', 'js', 'css', 'critical'))
 gulp.task('default', () => {
   server({
     server: {
-        baseDir: "./docs",
-        serveStaticOptions: {
-            extensions: ['html']
-        }
+      baseDir: './docs',
+      serveStaticOptions: {
+        extensions: ['html']
+      }
     }
   })
   gulp.watch('src/views/**/*.pug', gulp.series('html', reload))
