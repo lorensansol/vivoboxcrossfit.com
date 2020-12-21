@@ -1,7 +1,7 @@
 nav.navbar.navbar-expand-lg.navbar-light
   .container
     a.navbar-brand(href='/')
-      img.align-baseline(src='img/icono.png' alt='icono clínica martínez marcos' width='15' height='15')
+      img.align-baseline(src='img/icono.svg' alt='icono clínica martínez marcos' width='15' height='15')
       |  
       span.text-secondary.h6 Clínica
       |  
@@ -13,4 +13,4 @@ nav.navbar.navbar-expand-lg.navbar-light
         ul.navbar-nav.ml-auto
           each menuItem in menuItems
             li.nav-item: a.nav-link(href=`#${menuItem.link}`)= menuItem.name
-          li.nav-item: a.btn.navbar-btn.ml-md-2.btn-light(href='#contacto') Contacto
+          li.nav-item: a.btn.navbar-btn.ml-md-2.btn-primary(href='#contacto') Contacto
