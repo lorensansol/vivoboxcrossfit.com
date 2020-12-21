@@ -25,8 +25,8 @@ block servicios
           ]
         each serviciosItem in serviciosItems
           .p-2.col-6.col-lg-3(data-showup)
-            .card.text-center.text-dark
-              a.card-body.p-2.p-sm-3.p-md-4.bg-white.rounded.btn.btn-light(href=serviciosItem.link)
+            a.card.text-center.text-dark(href=serviciosItem.link)
+              .card-body.p-2.p-sm-3.p-md-4.bg-white.rounded.btn.btn-light
                 i.d-block.fa.fa-5x.mb-3.text-primary(class=`fa-${serviciosItem.icon}`)
                 p.text-secondary.h4.m-0= serviciosItem.name
 
