@@ -128,7 +128,7 @@ gulp.task('rest', () => {
     gulp
       .src('node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-*.*')
       .pipe(gulp.dest('docs/fonts')),
-    gulp.src(['src/*.*', 'src/.*']).pipe(gulp.dest('docs'))
+    gulp.src(['src/*.*', 'src/.*', 'src/*']).pipe(gulp.dest('docs'))
   )
 })
 
