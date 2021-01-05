@@ -34,9 +34,3 @@ html(lang="es")
       include footer.pug
     block scripts
       script(src="/js/scripts.js" defer)
-    block styles
-      if devMode
-        link(rel='stylesheet' href='/gfonts/fonts.css')
-      else
-        link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato%3A300%2C700%7COswald%3A700&display=swap' media='print' onload="this.media='all'")
-      link(rel='stylesheet' href='/css/styles.css' type='text/css')

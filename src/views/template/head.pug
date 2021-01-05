@@ -24,6 +24,11 @@ link(rel='icon' href='/wp-content/uploads/logo-vivobox-298x300.png' sizes='192x1
 link(rel='apple-touch-icon-precomposed' href='/wp-content/uploads/logo-vivobox-298x300.png')
 meta(name='msapplication-TileImage' content='/wp-content/uploads/logo-vivobox.png')
 meta(name='google-site-verification' content='7G6J3Jbf2rsTkcm4R3TxEnJ0lQcQegURr4rFQSvOcrw')
+if devMode
+  link(rel='stylesheet' href='/gfonts/fonts.css')
+else
+  link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato%3A300%2C700%7COswald%3A700&display=swap' media='print' onload="this.media='all'")
+link(rel='stylesheet' href='/css/styles.css' type='text/css')
 script(async src='https://www.googletagmanager.com/gtag/js?id=UA-63399796-1')
 script.
   window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-63399796-1');
