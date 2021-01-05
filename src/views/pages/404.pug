@@ -3,12 +3,11 @@ extends ../template/layout.pug
 block var
   - const title = 'Error 404: Página no encontrada 😅 【 VivoBox CrossFit 】'
 
-block nav
 block header
-  header
-    .container(data-showup)
+  header.position-relative.py-5.text-center
+    .container.position-relative(data-showup)
       h1.text-primary Error 404
-      p.lead ¡Página no encontrada! 😅
+      p.lead.text-white ¡Página no encontrada! 😅
 block content
   section.py-5
     .container
