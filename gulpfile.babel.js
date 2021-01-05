@@ -98,10 +98,10 @@ gulp.task('critical', () => {
     .src('docs/*.html')
     .pipe(
       critical({
-        base: 'docs/',
+        base: './docs/',
         inline: true,
         css: ['docs/css/styles.css'],
-        ignore: ['font-face']
+        ignore: ['@font-face', ':root']
       })
     )
     .pipe(gulp.dest('docs'))
