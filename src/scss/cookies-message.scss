@@ -1,0 +1,52 @@
+// Option one, if not -> two
+$option-one: true;
+$cookies-message-width: 14em;
+
+#cookies-message {
+	position: fixed;
+	@if $option-one {
+		bottom: 0;
+		left: -$cookies-message-width - 2;
+		max-width: $cookies-message-width;
+	} @else {
+		bottom: -3em;
+		left: 0;
+		width: 100vw;
+	}
+	z-index: 9000;
+	transition: all .5s;
+	&.active {
+		@if $option-one {
+			left: 0;
+		} @else {
+			bottom: 0;
+		}
+
+	}
+}
+
+// Onclick toggle cookies message
+#cookies-message-toggle,
+[onclick] {
+	cursor: pointer;
+}
+span[onclick] {
+	@extend .text-primary;
+}
+span[onclick]:hover {
+	@extend .text-primary, :hover;
+}
+
+// Hide icons
+.icon-none {
+	width: 0;
+	height: 0;
+}
+
+// Inline icons
+.icon-inline {
+	position: relative;
+	top: -.1em;
+	width: 1em;
+	height: 1em;
+}

@@ -5,44 +5,38 @@ html(lang="es")
   head
     block head
       include head.pug
-  body.text-center
-    block menu
-      include menu.pug
+  body#top
+    block nav
+      include nav.pug
     block header
       include header.pug
     main#main(role='main')
       block content
-        block servicios
-          include ../includes/servicios.pug
-        block nosotros
-          include ../includes/nosotros.pug
-        block equipo
-          include ../includes/equipo.pug
-        block caracteristicas
-          include ../includes/caracteristicas.pug
+        block crossfit
+          include ../includes/crossfit.pug
+        block entrenamiento
+          include ../includes/entrenamiento.pug
+        block clases
+          include ../includes/clases.pug
+        block kids
+          include ../includes/kids.pug
+        block box
+          include ../includes/box.pug
+        block entrenadores
+          include ../includes/entrenadores.pug
+        block horarios
+          include ../includes/horarios.pug
         block precios
           include ../includes/precios.pug
-        block ofertas
-          include ../includes/ofertas.pug
-        block aseguradoras
-          include ../includes/aseguradoras.pug
-        block resenas
-          include ../includes/resenas.pug
         block contacto
           include ../includes/contacto.pug
     block footer
       include footer.pug
-    block cookies
-      #cookiesms
-        | ¿Aceptas Cookies? 
-        a.text-primary(onclick="window.open('cookies','_blank')") Leer más
-        |  
-        button.btn.btn-secondary.btn-sm(onclick='controlcookies()') OK
     block scripts
       script(src="/js/scripts.js" defer)
     block styles
       if devMode
-        link(rel='stylesheet' href='gfonts/fonts.css')
+        link(rel='stylesheet' href='/gfonts/fonts.css')
       else
-        link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto+Slab:700|Roboto:300,400&display=swap' media='print' onload="this.media='all'")
-      link(rel='stylesheet' href='css/styles.css' type='text/css')
+        link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato%3A300%2C700%7COswald%3A700&#038&display=swap' media='print' onload="this.media='all'")
+      link(rel='stylesheet' href='/css/styles.css' type='text/css')

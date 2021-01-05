@@ -1,68 +1,213 @@
 * {
   scroll-behavior: smooth;
 }
-a.navbar-brand {
-  max-width: calc(100% - 78px);
-}
-a.btn,
-button.btn {
-  white-space: inherit;
-}
-#servicios .card > .card-header,
-#servicios .card > div {
-  border: #ccc 1px solid;
-  border-top: #ccc 0 solid;
-}
-#servicios .card:first-child > .card-header {
-  border-top: #ccc 1px solid;
-}
-#equipo .list-group-item {
-  text-indent: -14px;
-  padding-left: 48px;
-}
-#aseguradoras img {
-  max-height: 80px;
-  margin: 15px auto;
-  filter: grayscale(1);
-}
-#contacto iframe {
-  height: 300px;
-}
-.llamar {
-  position: fixed;
-  z-index: 10;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-.min-h-100 {
-  min-height: 100%;
-}
-#cookiesms {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  background-color: rgba(255, 255, 255, 0.9);
-  font-size: 14px;
-  padding: 5px;
-  width: 100%;
-  z-index: 5;
-}
-#cookiesms button {
-  line-height: 14px;
-}
-@media (min-width: 576px) {
-  #cookiesms {
-    top: inherit;
-    bottom: 0px;
+body {
+  font-size: 18px;
+  nav.navbar {
+    line-height: 24px;
   }
 }
-#cookiesms.ocultar-cookies {
-  transition: all 0.5s;
-  bottom: -40px;
-  top: inherit;
-  opacity: 0;
+header { background-image: url('/wp-content/uploads/back-squad-pesas-crossfit.jpg'); }
+header,
+#entrenamiento,
+#box,
+#horarios,
+#contacto {
+  background-size: cover;
+  background-attachment: fixed;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: rgba($dark, .5);
+  }
 }
-[onclick] {
-  cursor: pointer;
+header,
+#entrenamiento,
+#box,
+#horarios,
+#contacto {
+  font-size: 18px;
+}
+#crossfit {
+  .skills {
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 200px;
+      height: 200px;
+      left: 50%;
+      margin-left: -100px;
+      border: 15px $primary solid;
+      border-radius: 50%;
+      background-color: transparent;
+      transition: .2s ease;
+      z-index: 10;
+    }
+    svg {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 200px;
+      margin: 0 auto 10px;
+      padding: 30px 0;
+      fill: $dark;
+      transition: .2s ease;
+      z-index: 20;
+    }
+    &:hover {
+      &:before {
+        border: 15px #ccc solid;
+        background-color: $primary;
+      }
+      svg {
+        transform: scale(1.4);
+      }
+    }
+  }
+}
+.pulso {
+  animation: pulso 5s infinite;
+}
+@keyframes pulso {
+  0%, 5%, 10%, 100% {
+    transform: none;
+  }
+  1%, 6% {
+    transform: scale(1.2);
+  }
+}
+.fuerza {
+  animation: fuerza 5s 1s infinite;
+}
+@keyframes fuerza {
+  0%, 20%, 100% {
+    transform: none;
+  }
+  17% {
+    transform: skewX(-35deg) skewY(15deg);
+  }
+}
+.correr {
+  animation: correr 5s 2s infinite;
+}
+@keyframes correr {
+  0%, 6%, 100% {
+    transform: none;
+    opacity: 1;
+  }
+  2% {
+      transform: translateX(100px);
+      opacity: 0;
+  }
+  4% {
+      transform: translateX(-100px);
+      opacity: 0;
+  }
+}
+.pino {
+  animation: pino 5s 3s infinite;
+  transform-origin: 50% 85%;
+}
+@keyframes pino {
+  0%, 40%, 100% {
+    transform: none;
+  }
+  10% {
+      transform: rotate(5deg);
+  }
+  30% {
+      transform: rotate(-5deg);
+  }
+}
+blockquote:before {
+  content: "\201C";
+  display: block;
+  font-size: 3rem;
+  height: 0;
+  overflow: visible;
+  position: relative;
+  left: -20px;
+  top: -10px;
+}
+dl.horizontal {
+  & > dd {
+    float: left;
+    margin-left: 5px;
+    &:before {
+      content: ' = ';
+    }
+  }
+  & > dt {
+    float: left;
+    clear: both;
+    margin-bottom: 10px;
+  }
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+.overflow-x-scroll {
+  overflow-x: auto;
+}
+.cebreada {
+  td,
+  th {
+    padding: 6px;
+  }
+  tr:not(:first-child) {
+    border-top: 1px solid #ddd;
+  }
+  tr:nth-child(odd) {
+    background: rgba($white, .25);
+  }
+  th {
+    background: rgba($primary, .5);
+  }
+}
+iframe {
+  border: 0;
+}
+.precio {
+  background-color: #F2F2F2;
+  &__euros {
+    font-size: 32px;
+    margin: 0 -1.6rem !important;
+    text-align: center;
+    small {
+      font-size: 14px;
+      opacity: .85;
+      display: block;
+    }
+  }
+}
+.fotos {
+  columns: 3;
+  column-gap: .25em;
+  @include media-breakpoint-up(md) {
+    columns: 6;
+  }
+  a {
+    display: block;
+    margin-bottom: .25em;
+  }
+}
+.icon-none {
+  width: 0;
+  height: 0;
+}
+.icon-inline {
+  position: relative;
+  top: -.1em;
+  width: 1em;
+  height: 1em;
+  margin-right: .25em;
 }

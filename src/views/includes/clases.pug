@@ -1,0 +1,68 @@
+section.py-5.bg-white#clases
+  .container
+    .row
+      .col-12(data-showup)
+        h2.text-secondary.mb-4.text-uppercase.text-center ¿Cómo es una clase de CrossFit?
+      .col-md-6(data-showup)
+        p
+          | Las sesiones o 
+          strong clases de CrossFit
+          |  suelen tener una duración de 60 minutos, que se dividen en cuatro bloques:
+        ol
+          li
+            span(lang='en') Warm up = Calentamiento.
+          li Técnica.
+          li
+            abbr(lang='en' title='Workout Of Day') WOD
+            |  = Entrenamiento del día.
+          li
+            span(lang='en') Cool down
+            |  = Vuelta a la calma.
+        .mb-4
+          button.btn.btn-outline-primary.text-dark.m-2(type='button' data-toggle='modal' data-target='#que-es-wod')
+            | ✚ ¿Qué es un WOD?
+          button.btn.btn-outline-primary.text-dark.m-2(type='button' data-toggle='modal' data-target='#que-es-open')
+            | ✚ ¿Qué es un OPEN?
+      .col-md-6(data-showup)
+        img.img-fluid.img-thumbnail.d-block.mx-auto.mr-md-0(data-src='/wp-content/uploads/clases-crossfit.jpg' alt='clases-crossfit' data-srcset='/wp-content/uploads/clases-crossfit.jpg 1024w, /wp-content/uploads/clases-crossfit-300x200.jpg 300w, /wp-content/uploads/clases-crossfit-768x512.jpg 768w' data-sizes='(max-width: 1024px) 100vw, 1024px')
+      .modal.fade#que-es-wod(tabindex='-1' role='dialog' aria-labelledby='que-es-wod-title' aria-hidden='true')
+        .modal-dialog.modal-dialog-centered(role='document')
+          .modal-content
+            .modal-header
+              h2.modal-title#que-es-wod-title ¿Qué es un WOD de CrossFit?
+              button.close(type='button' data-dismiss='modal' aria-label='Cerrar')
+                span(aria-hidden='true') ✖
+            .modal-body
+              dl.horizontal
+                dt.d-inline-block WOD
+                dd.d-inline-block(lang='en') Workout Of Day
+                dd.d-inline-block Entrenamiento del Día
+              p
+                | Es el 
+                strong ejercicio
+                |  o conjunto de 
+                strong ejercicios
+                |  que se van a realizar diariamente para lograr que te conviertas en un atleta completo.
+              p
+                | En un 
+                strong WOD
+                |  se realizan trabajos de levantamiento de peso, elementos gimnásticos y ejercicio metabólico (cardiovascular).
+              p
+                | En 
+                strong VivoBox CrossFit
+                |  seguimos la plantilla de CrossFit, por lo que según el día se realiza una modalidad, dos o las tres, en un mismo WOD.
+            .modal-footer
+              button.btn.btn-primary(type='button' data-dismiss='modal')
+                | ✖ Cerrar
+      .modal.fade#que-es-open(tabindex='-1' role='dialog' aria-labelledby='que-es-open-title' aria-hidden='true')
+        .modal-dialog.modal-dialog-centered(role='document')
+          .modal-content
+            .modal-header
+              h2.modal-title#que-es-open-title ¿Qué es un OPEN de CrossFit?
+              button.close(type='button' data-dismiss='modal' aria-label='Cerrar')
+                span(aria-hidden='true') ✖
+            .modal-body
+              p En una clase o sesión OPEN, podrás venir al box a perfeccionar la técnica de ese ejercicio que no terminas de ejecutar bien, a realizar un entreno de fuerza o a lo que tú consideres, estando a tú disposición todo el material del box.
+            .modal-footer
+              button.btn.btn-primary(type='button' data-dismiss='modal')
+                | ✖ Cerrar

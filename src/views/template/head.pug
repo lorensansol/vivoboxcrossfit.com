@@ -12,70 +12,81 @@ block metas
   if noindex
     meta(name='robots' content='noindex')
 meta(property='og:site_name' content='Clínica Martínez Marcos')
-meta(property='og:url' content=`http://clinicamartinezmarcos.com/${url || ''}`)
+meta(property='og:url' content=`http://www.vivoboxcrossfit.com/${url || ''}`)
 meta(property='og:type' content='website')
 meta(property='og:locale' content='es_ES')
 meta(name='twitter:card' content='summary_large_image')
-meta(name='twitter:image' property='og:image' content=`https://clinicamartinezmarcos.com/${img || 'img/icono.png'}`)
+meta(name='twitter:image' property='og:image' content=`https://www.vivoboxcrossfit.com/${img || 'img/icono.png'}`)
 if url || index
-  link(rel='canonical' href=`https://clinicamartinezmarcos.com/${url || ''}`)
-link(rel='shortcut icon' type='image/x-icon' sizes='16x16' href='img/favicon.ico')
-link(rel='icon' type='image/png' sizes='32x32' href='img/favicon.png')
-meta(name='google-site-verification' content='9lvO4nmdJlYuvQnlw2zYQdtQwywFWusaxzHRuHCW6s8')
-script(async src='https://www.googletagmanager.com/gtag/js?id=UA-2157126-24')
+  link(rel='canonical' href=`https://www.vivoboxcrossfit.com/${url || ''}`)
+link(rel='icon' href='/wp-content/uploads/logo-vivobox-298x300.png' sizes='32x32')
+link(rel='icon' href='/wp-content/uploads/logo-vivobox-298x300.png' sizes='192x192')
+link(rel='apple-touch-icon-precomposed' href='/wp-content/uploads/logo-vivobox-298x300.png')
+meta(name='msapplication-TileImage' content='/wp-content/uploads/logo-vivobox.png')
+meta(name='google-site-verification' content='7G6J3Jbf2rsTkcm4R3TxEnJ0lQcQegURr4rFQSvOcrw')
+script(async src='https://www.googletagmanager.com/gtag/js?id=UA-63399796-1')
 script.
-  window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-2157126-24');
+  window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-63399796-1');
 script(type='application/ld+json').
   {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "logo": "https://clinicamartinezmarcos.com/img/icono.png",
+    "@context": "http://schema.org",
+    "@type": "ExerciseGym",
+    "additionalType": "LocalBusiness",
+    "logo": "https://www.vivoboxcrossfit.com/wp-content/uploads/logo-vivobox.png",
     "brand": {
       "@type": "Brand",
-      "name": "Clínica Martínez Marcos"},
-    "name": "Clínica Martínez Marcos",
-    // "alternateName": [
-    //   "clínica martínez marcos"],
-    "description": "Clínica de Psicología, Logopedia, Psiquiatría, Fisioterapia y Osteopatía en Murcia.",
-    "url": "http://clinicamartinezmarcos.com/",
+      "name": "VivoBox CrossFit"},
+    "name": "VivoBox CrossFit Murcia",
+    "alternateName": [
+      "VivoBox CrossFit",
+      "Vivo-Box CrossFit Murcia",
+      "Vivo-Box CrossFit",
+      "Vivo Box CrossFit Murcia",
+      "Vivo Box CrossFit"],
+    "description": "Box oficial de CrossFit en Murcia con entrenadores certificados y auténticos ejercicios y WOD's, sin imitaciones ni gimnasios convencionales.",
+    "url": "https://www.vivoboxcrossfit.com/",
     "sameAs": [
-      "https://www.instagram.com/clinicamartinezmarcos/",
-      "https://www.facebook.com/ClinicaMartinezMarcos1/"],
+      "https://www.facebook.com/vivobox.crossfit.murcia",
+      "https://www.instagram.com/vivobox.crossfit/",
+      "https://www.youtube.com/c/vivobox-crossfit-murcia",
+      "https://twitter.com/VIVOBOXCROSSFIT",
+      "https://vivoboxcrossfitmurcia.tumblr.com/",
+      "https://games.crossfit.com/affiliate/11738",
+      "https://twitter.com/VIVOBOXCROSSFIT",
+      "https://www.yelp.es/biz/vivo-box-crossfit-murcia",
+      "https://es.foursquare.com/v/vivobox-crossfit/55b6276e498e35142721bac0"],
     "telephone": [
-      "+34968111364",
-      "968 11 13 64",
-      "+34659733454",
-      "659 73 34 54"],
-    "email": "clinicamartinezmarcos@gmail.com",
-    "openingHours": "Mo-Fr 16:30-21:00",
-    "hasMap": "https://goo.gl/maps/hy19EF6aGu4AMsNG8",
+      "634 41 84 05",
+      "686 64 96 15"],
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Plaza Beato Andrés Hibernón 1",
-      "postalCode": "30001",
+      "streetAddress": "Avenida de Alicante, 217",
+      "postalCode": "30007",
       "addressLocality": "Murcia",
       "addressRegion": "Murcia",
       "addressCountry": "ES"},
+    "openingHours": [
+      "Mo-Fr,Sa,Su 7:30-22:00",
+      "Sa,Su 10:00-12:00"],
+    "hasMap": "https://www.google.es/maps/place/VivoBox+CrossFit+Murcia/@38.005279,-1.1100236,17z/data=!3m1!4b1!4m5!3m4!1s0xd63824f8b12b3bb:0xc3a68a56dd2e090e!8m2!3d38.005279!4d-1.1078349",
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "37.987117",
-      "longitude": "-1.127396"},
+      "latitude": "38.005279",
+      "longitude": "-1.107835"},
     "image": [
-      "https://clinicamartinezmarcos.com/img/fondo.jpg",
-      "https://clinicamartinezmarcos.com/img/equipo-clinica-martinez-marcos.jpg",
-      "https://clinicamartinezmarcos.com/img/juan-jose-martinez-marcos.jpg",
-      "https://clinicamartinezmarcos.com/img/leticia-martinez-pino.jpg",
-      "https://clinicamartinezmarcos.com/img/recibidor-central.jpg",
-      "https://clinicamartinezmarcos.com/img/modesto-jesus-sanchez-lopez.jpg",
-      "https://clinicamartinezmarcos.com/img/mios-rehab/equipo-mios-rehab.jpg",
-      "https://clinicamartinezmarcos.com/img/mios-rehab/jose-a-lozano.jpg",
-      "https://clinicamartinezmarcos.com/img/mios-rehab/miguel-garcia-albadalejo-miki.jpg",
-      "https://clinicamartinezmarcos.com/img/mios-rehab/local-mios-rehab-2.jpg",
-      "https://clinicamartinezmarcos.com/img/mios-rehab/local-mios-rehab.jpg"],
-    "priceRange": "$",
+      "https://www.vivoboxcrossfit.com/wp-content/uploads/manos-magnesio-crossfit.jpg",
+      "https://www.vivoboxcrossfit.com/wp-content/uploads/entrenamiento-crossfit-reventado.jpg",
+      "https://www.vivoboxcrossfit.com/wp-content/uploads/barra-pesas-crossfit.jpg",
+      "https://www.vivoboxcrossfit.com/wp-content/uploads/back-squad-pesas-crossfit.jpg",
+      "https://www.vivoboxcrossfit.com/wp-content/uploads/sentadilla-crossfit.jpg",
+      "https://www.vivoboxcrossfit.com/wp-content/uploads/entrenamiento-vivobox-crossfit.jpg",
+      "https://www.vivoboxcrossfit.com/wp-content/uploads/box-crossfit-murcia.jpg",
+      "https://www.vivoboxcrossfit.com/wp-content/uploads/ejercicios-crossfit-murcia.jpg",
+      "https://www.vivoboxcrossfit.com/wp-content/uploads/crossfit-murcia.jpg"],
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5",
-      "ratingCount": "13",
-      "reviewCount": "13"}
+      "ratingCount": "16",
+      "reviewCount": "16"},
+    "priceRange": "$$"
   }

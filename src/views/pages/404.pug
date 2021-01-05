@@ -1,11 +1,14 @@
 extends ../template/layout.pug
 
 block var
-  - const title= 'Error 404: Página no encontrada 😅 【 Tabica Oficinas ® 】'
+  - const title = 'Error 404: Página no encontrada 😅 【 VivoBox CrossFit 】'
 
-block headerContent
-  h1.text-primary Error 404
-  p.lead ¡Página no encontrada! 😅
+block nav
+block header
+  header
+    .container(data-showup)
+      h1.text-primary Error 404
+      p.lead ¡Página no encontrada! 😅
 block content
   section.py-5
     .container

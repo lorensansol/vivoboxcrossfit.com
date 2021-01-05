@@ -1,13 +1,51 @@
-header.d-flex.align-items-center.py-5.cover.section-parallax.section-light(style=`background-image: url('${headerBackground || 'img/fondo.jpg'}'); background-size: cover;`)
+header.py-5.cover.text-white.position-relative
+  //- .position-absolute.w-100.h-100.bg-dark
   .container(data-showup)
     .row
-      .col-lg-12.mt-5
-        block headerContent
-          h1.mb-3.d-table.m-auto.text-left
-            img.align-baseline.mr-1(src='img/icono.svg' alt='icono clínica martínez marcos' width='50' height='50')
-            span.text-secondary Clínica
-            span.text-primary.d-block.h2 Martínez Marcos
-          p.lead Tu salud en las mejores manos
-        a.btn.btn-lg.mt-4.btn-secondary(href='#main') Más Información
-        a.text-dark.text-decoration-none(href='#main')
-          i.d-block.fa.fa-angle-down.pt-5.fa-3x
+      .col-12
+        a.btn.btn-lg.w-100.btn-primary.mb-5(href='https://vivobox.wodbuster.com/athlete/reservas.aspx' target='_blank')
+          //- i.fa.fa-fw.fa-sign-in-alt
+          <svg fill="currentColor" class="icon-inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M416 448h-84c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h84c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32h-84c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h84c53 0 96 43 96 96v192c0 53-43 96-96 96zm-47-201L201 79c-15-15-41-4.5-41 17v96H24c-13.3 0-24 10.7-24 24v96c0 13.3 10.7 24 24 24h136v96c0 21.5 26 32 41 17l168-168c9.3-9.4 9.3-24.6 0-34z"/></svg>
+          |  Reservas
+      .col-md-6.text-center
+        img.img-fluid(src='/wp-content/uploads/logo-vivobox.png' alt='Logo VivoBox CrossFit' srcset='/wp-content/uploads/logo-vivobox.png 372w, /wp-content/uploads/logo-vivobox-298x300.png 298w' sizes='(max-width: 372px) 100vw, 372px')
+        h1.text-uppercase.mt-5.mb-5.mb-md-0 VivoBox CrossFit Murcia
+      .col-md-6.d-flex.flex-column
+        #carousel-header.carousel.slide.p-5.border-top.border-bottom.h-100(data-ride='carousel')
+          ol.carousel-indicators
+            li.active(data-target='#carousel-header' data-slide-to='0')
+            li(data-target='#carousel-header' data-slide-to='1')
+            li(data-target='#carousel-header' data-slide-to='2')
+            li(data-target='#carousel-header' data-slide-to='3')
+            li(data-target='#carousel-header' data-slide-to='4')
+            li(data-target='#carousel-header' data-slide-to='5')
+            li(data-target='#carousel-header' data-slide-to='6')
+            li(data-target='#carousel-header' data-slide-to='7')
+            li(data-target='#carousel-header' data-slide-to='8')
+          .carousel-inner
+            .carousel-item.h3.pb-5.active Practico un deporte en el que los contrincantes son tus mejores amigos
+            .carousel-item.h3.pb-5 El único que te crea la necesidad de contar las repeticiones de tus compañeros
+            .carousel-item.h3.pb-5 El único que te hace ver un banco en el parque como un instrumento para tu trabajo del día
+            .carousel-item.h3.pb-5 El único que es imposible de explicar con palabras
+            .carousel-item.h3.pb-5 El único que al escuchar nombres de mujeres, te hace sentir débil y fuerte al mismo tiempo
+            .carousel-item.h3.pb-5 Un deporte que te hace entender códigos de guerra
+            .carousel-item.h3.pb-5 El único en el que ves tus manos rotas, ensangrentadas y sonríes por el esfuerzo de la batalla
+            .carousel-item.h3.pb-5 El único que te hace sentir 20 segundos como una eternidad y 10 segundos como un parpadeo
+            .carousel-item.h3.pb-5 El único que te crea un nudo en el estómago al escuchar 3, 2, 1, y te hace sentir el primer aliento de tu vida al escuchar 'TIEMPO'
+          a.carousel-control-prev(href='#carousel-header' role='button' data-slide='prev')
+            span.carousel-control-prev-icon(aria-hidden='true')
+            span.sr-only Anterior
+          a.carousel-control-next(href='#carousel-header' role='button' data-slide='next')
+            span.carousel-control-next-icon(aria-hidden='true')
+            span.sr-only Siguiente
+        .row.mt-5
+          .col-sm
+            a.btn.btn-secondary.my-2.w-100(href='#crossfit')
+              //- i.fa.fa-question-circle.mr-2
+              <svg fill="currentColor" class="icon-inline mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zM262.655 90c-54.497 0-89.255 22.957-116.549 63.758-3.536 5.286-2.353 12.415 2.715 16.258l34.699 26.31c5.205 3.947 12.621 3.008 16.665-2.122 17.864-22.658 30.113-35.797 57.303-35.797 20.429 0 45.698 13.148 45.698 32.958 0 14.976-12.363 22.667-32.534 33.976C247.128 238.528 216 254.941 216 296v4c0 6.627 5.373 12 12 12h56c6.627 0 12-5.373 12-12v-1.333c0-28.462 83.186-29.647 83.186-106.667 0-58.002-60.165-102-116.531-102zM256 338c-25.365 0-46 20.635-46 46 0 25.364 20.635 46 46 46s46-20.636 46-46c0-25.365-20.635-46-46-46z"/></svg>
+              |  ¿Qué es esto?
+          .col-sm
+            a.btn.btn-primary.my-2.w-100(href='#box')
+              //- i.fa.fa-info-circle.mr-2
+              <svg fill="currentColor" class="icon-inline mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/></svg>
+              |  Nuestro Box en Murcia

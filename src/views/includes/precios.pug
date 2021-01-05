@@ -1,21 +1,63 @@
-section.py-5.cover.section-parallax.section-light#precios(data-style=`background-image: url(${preciosBackground || 'img/consulta.jpg'}); background-size: cover;`)
+section.py-5.bg-white#precios
   .container
     .row
-      .text-center.mx-auto.col-md-12
-        h2.h1.text-secondary Precios
-    .row.justify-content-center
-      if preciosItems
-        each preciosItem in preciosItems
-          .p-3(class=preciosItem.class data-showup)
-            .card.text-center.text-dark
-              .card-body.p-4.bg-white.rounded
-                i.d-block.fa.fa-5x.mb-3.text-primary(class=`fa-${preciosItem.icon}`)
-                h3.text-secondary= preciosItem.header
-                p.mt-3
-                  if preciosItems.lenght =! 1
-                    | Sesión Individual
-                    br
-                  i.fa.fa-fw.fa-clock.d-inline.text-primary
-                  |  #{preciosItem.minuts} minutos
-                h4.h2.text-primary= preciosItem.price
-                a.btn.mt-3.btn-secondary(href='#contacto') Contactar
+      .col-12(data-showup)
+        h2.text-secondary.mb-4.text-uppercase.text-center Precios
+      .precio.col-sm-6.col-md-3.border.rounded.p-2(data-showup)
+        .border.p-3.bg-white
+          h3.text-uppercase.mb-4.text-center Inicio
+          .precio__euros.bg-info.p-3.text-white
+            span 45 €/mes 
+            small o 120 €/trimestre
+          ul.list-group.my-4
+            li.list-group-item.border-top-0.border-left-0.border-right-0.border-bottom 2 clases / semana
+            li.list-group-item.border-top-0.border-left-0.border-right-0.border-bottom 8 clases / mes
+            li.list-group-item.border-0 24 clases / trimestre
+          a.btn.btn-info.w-100(href='#contacto') Contactar
+      .precio.col-sm-6.col-md-3.border.rounded.p-2(data-showup)
+        .border.p-3.bg-white
+          h3.text-uppercase.mb-4.text-center Motivao
+          .precio__euros.bg-primary.p-3.text-white
+            span 50 €/mes 
+            small o 135 €/trimestre
+          ul.list-group.my-4
+            li.list-group-item.border-top-0.border-left-0.border-right-0.border-bottom 3 clases / semana
+            li.list-group-item.border-top-0.border-left-0.border-right-0.border-bottom 12 clases / mes
+            li.list-group-item.border-0 36 clases / trimestre
+          a.btn.btn-primary.w-100(href='#contacto') Contactar
+      .precio.col-sm-6.col-md-3.border.rounded.p-2(data-showup)
+        .border.p-3.bg-white
+          h3.text-uppercase.mb-4.text-center Crack
+          .precio__euros.bg-info.p-3.text-white
+            span 60 €/mes 
+            small o 165 €/trimestre
+          ul.list-group.my-4
+            li.list-group-item.border-top-0.border-left-0.border-right-0.border-bottom 4 clases / semana
+            li.list-group-item.border-top-0.border-left-0.border-right-0.border-bottom 16 clases / mes
+            li.list-group-item.border-0 48 clases / trimestre
+          a.btn.btn-info.w-100(href='#contacto') Contactar
+      .precio.col-sm-6.col-md-3.border.rounded.p-2(data-showup)
+        .border.p-3.bg-white
+          h3.text-uppercase.mb-4.text-center Spartan
+          .precio__euros.bg-primary.p-3.text-white
+            span 70 €/mes 
+            small o 190 €/trimestre
+          ul.list-group.my-4
+            li.list-group-item.border-top-0.border-left-0.border-right-0.border-bottom ∞ clases / semana
+            li.list-group-item.border-top-0.border-left-0.border-right-0.border-bottom ∞ clases / mes
+            li.list-group-item.border-0 ∞ clases / trimestre
+          a.btn.btn-primary.w-100(href='#contacto') Contactar
+      .col-sm-6.text-center.mt-5(data-showup)
+        h3.h2.text-uppercase BONO 10 CLASES
+        p.h1.text-uppercase.text-primary 80 €
+      .col-sm-6.text-center.mt-5(data-showup)
+        h3.h2.text-uppercase CLASE INDIVIDUAL
+        p.h1.text-uppercase.text-primary 10 €
+      .col-12.text-center.mt-5(data-showup)
+        h3.h2.text-uppercase PRIMERA CLASE
+        p.h1.text-uppercase.text-primary GRATIS
+        p.my-5 Tú decides como repartir tus clases, ya sean OPEN o WOD.
+        a.btn.btn-lg.w-100.btn-primary.mb-5(href='https://vivobox.wodbuster.com/athlete/reservas.aspx' target='_blank')
+          //- i.fa.fa-fw.fa-sign-in-alt
+          <svg fill="currentColor" class="icon-inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M416 448h-84c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h84c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32h-84c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h84c53 0 96 43 96 96v192c0 53-43 96-96 96zm-47-201L201 79c-15-15-41-4.5-41 17v96H24c-13.3 0-24 10.7-24 24v96c0 13.3 10.7 24 24 24h136v96c0 21.5 26 32 41 17l168-168c9.3-9.4 9.3-24.6 0-34z"/></svg>
+          |  Regístrate

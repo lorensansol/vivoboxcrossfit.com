@@ -39,11 +39,14 @@ gulp.task('html', () => {
 
 const filesJs = [
   'node_modules/bootstrap.native/dist/bootstrap-native.js',
-  'src/js/cookies-control.js',
+  'src/js/cookies-message.js',
+  'src/js/load-script.js',
   'src/js/scroll-behavior-smooth.js',
   'src/js/scroll-shot.js',
   'src/js/scroll-show.js',
   'src/js/lazy-load.js',
+  'src/js/btn-up.js',
+  'src/js/smooth-scroll.min.js',
   'src/js/custom.js'
 ]
 
@@ -53,6 +56,7 @@ gulp.task('js', () => {
       .src(filesJs)
       .pipe(concat('scripts.js'))
       .pipe(gulp.src('src/js/smooth-scroll.min.js'))
+      .pipe(gulp.src('node_modules/simplelightbox/dist/simple-lightbox.js'))
       .pipe(gulp.dest('docs/js'))
   } else {
     return gulp
@@ -60,6 +64,7 @@ gulp.task('js', () => {
       .pipe(babel())
       .pipe(concat('scripts.js'))
       .pipe(gulp.src('src/js/smooth-scroll.min.js'))
+      .pipe(gulp.src('node_modules/simplelightbox/dist/simple-lightbox.js'))
       .pipe(terser())
       .pipe(gulp.dest('docs/js'))
   }
@@ -104,7 +109,7 @@ gulp.task('critical', () => {
 
 gulp.task('img', () => {
   return gulp
-    .src('src/img/**/*')
+    .src('src/wp-content/**/*')
     .pipe(
       imagemin([
         imagemin.gifsicle({ interlaced: true }),
@@ -115,7 +120,7 @@ gulp.task('img', () => {
         })
       ])
     )
-    .pipe(gulp.dest('docs/img'))
+    .pipe(gulp.dest('docs/wp-content'))
 })
 
 gulp.task('rest', () => {
