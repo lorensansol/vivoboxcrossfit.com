@@ -94,7 +94,7 @@ block content
         //- VIEJAS FOTOS
 
         mixin imgOld(slug, slug300, slug768)
-          a(href=`/img/${slug}.jpg` data-lightbox='gallery')
+          a(href=`/wp-content/uploads/${slug}.jpg` data-lightbox='gallery')
             img.img-fluid(data-src=`/wp-content/uploads/${slug}-${slug300}.jpg` alt=slug data-srcset=`/wp-content/uploads/${slug}-${slug300}.jpg 300w, ${ slug768 ? `/wp-content/uploads/${slug}-${slug768}.jpg 768w, /wp-content/uploads/${slug}.jpg 1024w` : `/wp-content/uploads/${slug}.jpg 683w` }`)
 
         +imgOld('crossfit-murcia', '300x200', '768x512')
