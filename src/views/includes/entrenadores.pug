@@ -3,66 +3,103 @@ section.py-5.bg-white#entrenadores
     .row
       .col-12(data-showup)
         h2.text-secondary.mb-4.text-uppercase.text-center Nuestros Entrenadores de CrossFit
-      .col-sm-6(data-showup)
-        img.img-fluid.p-3.bg-primary.d-block.mx-auto.rounded-circle(data-src='/wp-content/uploads/bb-plugin/cache/jose-antonio-sanchez-mora-300x300-circle.jpg' alt='jose-antonio-sanchez-mora')
-        h3.text-primary.text-uppercase.text-center.my-4 Jose Antonio Sánchez Mora
-        p.text-center.mb-4
-          button.btn.btn-outline-primary.text-dark(type='button' data-toggle='modal' data-target='#jose-antonio-sanchez-mora')
-            | ✚ Ampliar info
-        .modal.fade#jose-antonio-sanchez-mora(tabindex='-1' role='dialog' aria-labelledby='jose-antonio-sanchez-mora-title' aria-hidden='true')
-          .modal-dialog.modal-dialog-centered(role='document')
-            .modal-content
-              .modal-header
-                h3.modal-title#jose-antonio-sanchez-mora-title Jose Antonio Sánchez Mora
-                button.close(type='button' data-dismiss='modal' aria-label='Cerrar')
-                  span(aria-hidden='true') ✖
-              .modal-body
-                img.img-fluid.p-3.bg-primary.d-block.mx-auto.mb-3.rounded-circle(data-src='/wp-content/uploads/bb-plugin/cache/jose-antonio-sanchez-mora-300x300-circle.jpg' alt='jose-antonio-sanchez-mora')
-                p
-                  | (Julio 1982, 
-                  strong Murcia
-                  | )
-                p
-                  | Con una experiencia profesional en el mundo del Fitness de más de 10 años, antes de ser 
-                  strong entrenador de CrossFit
-                  |  ha sido propietario de un 
-                  strong gimnasio
-                  |  tradicional en el que ha desarrollado su profesión de preparador físico y 
-                  strong entrenador
-                  |  nacional de fisicoculturismo, con multitud de atletas que han competido a nivel regional y nacional.
-                p En la búsqueda de nuevas metas y modalidades deportivas, fuera de los entrenamientos en gimnasio convencional, comenzó con entrenamientos de movimientos funcionales a alta intensidad y, en consecuencia, con el descubrimiento de CrossFit.
-                p
-                  | Comenzó la práctica de 
-                  strong CrossFit en Murcia
-                  |  en 2012 y, posteriormente, su formación en este deporte.
-                h4 Formación:
-                ul
-                  li Master especialista en ciclo indoor (2004)
-                  li Monitor de sala por FEDA (2005)
-                  li Preparador físico y deportivo CCC (2004)
-                  li Monitor de físico culturismo y Fitness IFBB (2006)
-                  li Entrenador personal FEDA (2006)
-                  li Técnico especialista en dietética y nutrición IFBB (2008)
-                  li Entrenador personal IFBB (2010)
-                  li Técnico de nivel1 de físico culturismo y Fitness IFBB (2010)
-                  li Curso de CrossFit Basic en MundoCrossFit (2013)
-                  li Seminario Halterofilia CrossFit ALC con Miguel Borrazas (2013)
-                  li Certificado Level1 en Singular Box (2014)
-                  li Certificado entrenador CrossFit Endurance en Singular Box (2014)
-                  li Juez de Crossfit (2015)
-                  li Certificado entrenador Crossfit Ketlelbell (2015)
-                  li
-                    | Cursando en IICEFS (Instituto Internacional de Ciencias del Ejercicio Físico y Salud)
-                    ul
-                      li Máster en Prevención y Readaptación de Lesiones Deportivas
-                      li Título Universitario "Experto en Entrenamiento Personal"
-                      li Título Universitario "Experto en Prevención y Readaptación Físico Deportiva"
-              .modal-footer
-                button.btn.btn-primary(type='button' data-dismiss='modal')
-                  | ✖ Cerrar
-      .col-sm-6(data-showup)
+      mixin equipo(name, slug)
+        .col-sm-6.col-md-4.d-flex.flex-column(data-showup)
+          img.img-fluid.p-3.bg-secondary.d-block.mx-auto.rounded-circle(data-src=`/img/equipo/${slug}-300.jpg` alt=slug)
+          p.h3.text-primary.text-uppercase.text-center.my-4= name
+          p.text-center.mb-5.mt-auto
+            button.btn.btn-outline-primary.text-dark(type='button' data-toggle='modal' data-target=`#${slug}`)
+              | ✚ Ampliar info
+          .modal.fade(id=`${slug}` tabindex='-1' role='dialog' aria-labelledby=`${slug}-title` aria-hidden='true')
+            .modal-dialog.modal-dialog-centered(role='document')
+              .modal-content
+                .modal-header
+                  h3.modal-title(id=`${slug}-title`)= name
+                  button.close(type='button' data-dismiss='modal' aria-label='Cerrar')
+                    span(aria-hidden='true') ✖
+                .modal-body
+                  img.img-fluid.p-3.bg-secondary.d-block.mx-auto.mb-3.rounded-circle(data-src=`/img/equipo/${slug}-300.jpg` alt=slug)
+                  if block
+                    block
+                .modal-footer
+                  button.btn.btn-primary(type='button' data-dismiss='modal')
+                    | ✖ Cerrar
+      +equipo('Jose Antonio Sánchez Mora', 'jose-antonio-sanchez-mora')
+        p.h6 Julio 1982, Murcia
+        p.h4.text-primary Máster en Prevención y Readaptación de Lesiones Deportivas
+        p
+          | Con una experiencia profesional en el mundo del Fitness de más de 15 años, antes de ser 
+          strong entrenador de CrossFit
+          |  ha sido propietario de un 
+          strong gimnasio
+          |  tradicional en el que ha desarrollado su profesión de preparador físico y 
+          strong entrenador
+          |  nacional de fisicoculturismo, con multitud de atletas que han competido a nivel regional y nacional.
+        p En la búsqueda de nuevas metas y modalidades deportivas, fuera de los entrenamientos en gimnasio convencional, comenzó con entrenamientos de movimientos funcionales a alta intensidad y, en consecuencia, con el descubrimiento de CrossFit.
+        p
+          | Comenzó la práctica de 
+          strong CrossFit en Murcia
+          |  en 2012 y, posteriormente, su formación en este deporte.
+        //- ul
+          li Máster especialista en ciclo indoor (2004)
+          li Monitor de sala por FEDA (2005)
+          li Preparador físico y deportivo CCC (2004)
+          li Monitor de físico culturismo y Fitness IFBB (2006)
+          li Entrenador personal FEDA (2006)
+          li Técnico especialista en dietética y nutrición IFBB (2008)
+          li Entrenador personal IFBB (2010)
+          li Técnico de nivel1 de físico culturismo y Fitness IFBB (2010)
+          li Curso de CrossFit Basic en MundoCrossFit (2013)
+          li Seminario Halterofilia CrossFit ALC con Miguel Borrazas (2013)
+          li Certificado Level1 en Singular Box (2014)
+          li Certificado entrenador CrossFit Endurance en Singular Box (2014)
+          li Juez de Crossfit (2015)
+          li Certificado entrenador Crossfit Ketlelbell (2015)
+          li
+            | Cursando en IICEFS (Instituto Internacional de Ciencias del Ejercicio Físico y Salud)
+            ul
+              li Máster en Prevención y Readaptación de Lesiones Deportivas
+              li Título Universitario "Experto en Entrenamiento Personal"
+              li Título Universitario "Experto en Prevención y Readaptación Físico Deportiva"
+      +equipo('David Hernández Viña', 'david-hernandez-vina')
+        p.h6 25 Marzo 1980, S/C de Tenerife
+        p.h4.text-primary Level 1 Trainer (CF-L1)
+        p Amante de los deportes, competidor en carreras OCR (Obstacle Course Racing) decide en dar un cambio de vida laboral y dedicarse a su pasión por el crossfit.
+        p Sin que todavía el crossfit hubiera surgido, ya comenzó en su profesión como militar de operaciones especiales a practicar lo que fue en sus comienzos el crossfit.
+        p El entusiasmo por este deporte le hace formarse en el mundo del fitness, especializarse en el crossfit y continuar con su formación en este sector. Es competidor a nivel nacional y busca mejorar diariamente en este deporte.
+        p Como coach en Vivobox imparte sus clases con mucha pasión por el crossfit, siendo éstas motivadoras y alegres sin dejar por supuesto la intensidad que exige en cada W.O.D.
+      +equipo('Germán Zuñel Lorente', 'german-zunel-lorente')
+        p.h6 20 Julio 1993, Murcia
+        p.h4.text-primary Licenciado en Ciencias de la Actividad Física y del Deporte
+        p Especialista en entrenamiento funcional de alta intensidad.
+        p El deporte ha marcado mi vida ya desde bien joven.
+        p Comencé en JUDO en el cuál tuve varios logros a nivel nacional e internacional. 
+        p Hasta que decidí dedicarme profesionalmete al deporte, y licenciarme en Ciencias de la Actividad Física y del Deporte.
+        p Durante mis años de estudiante, a parte de impartir clases dirigidas en el sector del fitness, me formé en: Rugby, Deportes Gimnásticos y Metodología del entrenamiento entre otros, los cuales me han aportado una sabiduría, que imparto cada día en VIVOBOX con todos mis alumnos.
+      +equipo('Brayan González Ocampo', 'brayan-gonzalez-ocampo')
+        p.h6 5 Abril 1997, Colombia
+        p.h4.text-primary Técnico Superior en Actividades Físicas y Recreativas
+        p Mi primer contacto con el CrossFit fue jugando al fútbol americano donde hacíamos sesiones de entrenamiento de alta intensidad, después al encontrarlo aquí en Vivobox decidí probarlo y una vez probado decidí especializarme en el sector del entrenamiento funcional.
+        p Me encanta mejorar y aprender día a día para poder dar un mejor servicio, me llena mucho ver a las personas contentas, progresando y sobretodo mejorando su salud aquí con nosotros.
+        p Practico al igual que enseño este deporte con pasión, ya que es una gran parte de mi vida. 
+      +equipo('María Sánchez Mira', 'maria-sanchez-mira')
+        p.h6 18 Enero 1997, Alicante
+        p.h4.text-primary Máster de Nutrición en la Actividad Física y el Deporte
+        p Nutricionista especializada en deportes de alta intensidad
+        p Empezó su formación en el mundo del deporte y, viendo la importancia de la nutrición en este ámbito, decidió formarse en este campo. 
+        p Siempre ha tenido claro que de alguna manera quería ayudar a los atletas a mejorar su rendimiento deportivo. 
+        p Por ello, empezó con las carreras de ORC y posteriormente empezó a entrenar CrossFit a nivel usuario. Actualmente sigue una programación de Crossfit enfocada a la competición. 
+        p Con todo ello, su objetivo es entender a los atletas en consulta y poder asesorar e individualizar al máximo las necesidades de cada uno de ellos. Así pues, intenta adaptar el plan nutricional a cada atleta según su estilo de vida y sus necesidades, partiendo siempre desde la salud como prioridad. 
+        p Está en continua formación para poder ofrecer el mejor servicio posible. 
+      +equipo('Higinio Murcia Campoy', 'higinio-murcia-campoy')
+        p.h6 13 Octubre 1986, Murcia
+        p.h4.text-primary Graduado en Fisioterapia por la Universidad Católica San Antonio de Murcia
+        p Fisioterapeuta especializado en movilidad y prevención de lesiones en crossfit.
+        p Es un fiel defensor del entrenamiento de fuerza como base de salud.
+        p Tras su andadura en el Real Murcia y en Paris, decidió formar parte del equipo de Vivobox y fijar allí uno de los centros de KINESIA Fisioterapia y Movimiento, donde, además de los tratamientos activos, tiene tratamientos de punción seca, presoterapia, neuromodulación y masajes.
+      //- .col-sm-6(data-showup)
         img.img-fluid.p-3.bg-primary.d-block.mx-auto.rounded-circle(data-src='/wp-content/uploads/bb-plugin/cache/francisco-jose-gallego-molina-300x300-circle.jpg' alt='francisco-jose-gallego-molina')
-        h3.text-primary.text-uppercase.text-center.my-4 Francisco José Gallego Molina
+        p.h3.text-primary.text-uppercase.text-center.my-4 Francisco José Gallego Molina
         p.text-center.mb-4
           button.btn.btn-outline-primary.text-dark(type='button' data-toggle='modal' data-target='#francisco-jose-gallego-molina')
             | ✚ Ampliar info

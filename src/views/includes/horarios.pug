@@ -126,20 +126,20 @@ section.py-5.text-white.position-relative#horarios(data-style='background-image:
                 td -
               tr
                 th 20:00
-                td W*
-                td W*
-                td W*
-                td W*
-                td W*
+                td W
+                td W
+                td W
+                td W
+                td W
                 td -
                 td -
               tr
                 th 21:00
-                td W*
-                td W*
-                td W*
-                td W*
-                td W*
+                td W
+                td W
+                td W
+                td W
+                td W
                 td -
                 td -
       .col-md-6.col-lg-8(data-showup)
@@ -149,23 +149,31 @@ section.py-5.text-white.position-relative#horarios(data-style='background-image:
           dd Entrenamiento del Día
           dt O = OPEN
           dd Entrenamiento Libre
-        p *30 plazas de WOD sin posibilidad de OPEN
         p
           | En cada 
           strong clase de CrossFit
           |  hay un número máximo de 
-          b 15 plazas
-          |  para 
-          b WOD
-          |  y otras 15 para 
-          b OPEN
-          |  simultaneamente, ya que se puede reservar 
-          b OPEN
-          |  en todos los horarios mostrados 
-          span(style='text-decoration: underline;') excepto a las 20:00 y 21:00
-          | , debido a que habrá el doble de plazas (30) de 
-          b WOD
-          | .
+          strong 30 plazas
+          |. Según la tabla de horarios:
+        ul
+          li
+            strong W
+            |  = 
+            strong 22
+            |  plazas de 
+            strong WOD
+            |  + 
+            strong 8
+            |  plazas de 
+            strong OPEN
+            |  simultaneamente.
+          li
+            strong O
+            |  = 
+            strong 30
+            |  plazas de 
+            strong OPEN
+            |  solamente.
         p
           | Para asistir a una clase o sesión, es necesario 
           a(title='Reservas' href='https://vivobox.wodbuster.com/athlete/reservas.aspx' target='_blank') reservar
@@ -179,7 +187,7 @@ section.py-5.text-white.position-relative#horarios(data-style='background-image:
           | Para poder reservar plaza en una 
           strong clase de CrossFit
           | , es necesario estar registrado. Si aún no lo estás, completa el registro y de manera automática podrás reservar una sesión, puesto que 
-          b
+          strong
             | la primera clase en VivoBox CrossFit es 
             span(style='color: #c3251d;') gratis
           | .

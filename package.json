@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "git add .; git commit -m \"correcciones\"; git push"
+    "test": "git add .; git commit -m \",correcciones\"; git push",
+    "deploy": "git add .;git commit -m \"Actualización: `date +'%Y-%m-%d %H:%M:%S'`\";git push"
   },
   "author": "",
   "license": "ISC",
