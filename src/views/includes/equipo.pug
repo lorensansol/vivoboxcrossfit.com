@@ -1,8 +1,9 @@
-section.py-5.bg-white#entrenadores
+section.py-5.bg-white#equipo
   .container
     .row
       .col-12(data-showup)
-        h2.text-secondary.mb-4.text-uppercase.text-center Nuestros Entrenadores de CrossFit
+        h2.h1.text-secondary.text-uppercase.text-center Equipo
+        p.text-secondary.mb-5.text-center Nuestros entrenadores de Crossfit y resto del equipo
       mixin equipo(name, slug)
         .col-sm-6.col-lg-4.d-flex.flex-column(data-showup)
           img.img-fluid.p-3.bg-secondary.d-block.mx-auto.rounded-circle(data-src=`/img/equipo/${slug}-300.jpg` alt=slug)
