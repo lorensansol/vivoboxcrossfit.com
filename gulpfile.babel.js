@@ -84,7 +84,13 @@ gulp.task('css', () => {
       .pipe(
         purgecss({
           content: ['docs/**/*.html', 'docs/js/*.js'],
-          variables: true
+          variables: true,
+          whitelist: [
+            'carousel-item-next',
+            'carousel-item-prev',
+            'carousel-item-left',
+            'carousel-item-right'
+          ]
         })
       )
       .pipe(postcss([comments({ removeAll: true }), cssnano(), autoprefixer()]))
